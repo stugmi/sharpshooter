@@ -1,0 +1,38 @@
+{
+	"name": "sharpshooter",
+	"targetPath": "build",
+	"lflags": [
+		"psapi.lib",
+		"d3d11.lib",
+		"dcomp.lib",
+		"D3dcompiler.lib",
+		"libs/VMProtectSDK64.lib"
+	],
+	"dependencies": {
+		"aegis": "~>1.0.0",
+		"directx-d": "~>0.12.0",
+		"toml": "~>1.0.0-rc.2"
+	},
+	"configurations": [
+		{
+			"name": "debug",
+			"targetType": "executable",
+			"dflags": [
+				"-Jsource",
+				"-d-version=Driver,ESP,Console",
+				"-gc"
+			]
+		},
+		{
+			"name": "release",
+			"targetType": "dynamicLibrary",
+			"dflags": [
+				"-Jsource",
+				"-d-version=Driver,ESP,Authentication,ProtectProcess,VMProtect"
+			],
+			"lflags": [
+				"/EXPORT:EntryPoint"
+			]
+		}
+	]
+}

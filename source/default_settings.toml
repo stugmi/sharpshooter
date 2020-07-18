@@ -1,0 +1,273 @@
+# Key codes: https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx
+ReloadSettingsKey = 0x37
+AimLockEnemyHeadHitScanKey = 0x0
+AimLockEnemyChestHitScanKey = 0x0
+AimLockFriendHitScanKey = 0x0
+FlickShotEnemyHeadHitScanKey = 0x0
+FlickShotEnemyHeadProjectileKey = 0x0
+FlickShotEnemyChestHitScanKey = 0x0
+FlickShotEnemyChestProjectileKey = 0x0
+FlickShotFriendHitScanKey = 0x0
+FlickShotFriendProjectileKey = 0x0
+AimLockEnemyHeadProjectileKey = 0x0
+AimLockEnemyChestProjectileKey = 0x0
+AimLockFriendProjectileKey = 0x0
+OverlayKey = 0x33
+NextProfileKey = 0x35
+PreviousProfileKey = 0x36
+BurstKey = 0x0
+ExitKey = 0x0
+
+# Whether the overlay is enabled
+OverlayEnabled = false
+
+# The key to tag a player on the ESP
+TagKey = 0x0
+
+# Sensitivity
+# If this is too high the aimbot will track more slowly than it should.
+# If this is too low the aimbot will bounce/shake when targeting.
+# Test it on hitscan with SmoothingExponent = 0
+Sensitivity = 4000
+
+# The maximum distance from the center of a screen to search for targets
+# inf for anywhere.
+FieldOfView = 0.5
+
+# The maximum distance in meters to use CloseFoV at
+CloseFoVMaximumDistance = 6
+
+# The FoV to use when the target is within CloseFoVMaximumDistance
+CloseFoV = 1.0
+
+# The smoothing exponent to use when the target is within CloseFoVMaximumDistance
+CloseFoVSmoothingExponent = 0
+
+# Whether to unlock if the target moves behind you
+UnlockIfTargetMovesBehind = false
+
+# Whether to unlock if the target is moving very quickly (Tracer using blink for example)
+UseMaximumTrackingSpeed = true
+
+# How often to search for new maps, in milliseconds
+MapListUpdateFrequency = 1000
+
+# The minimum FoV to smooth at
+MinimumSmoothingMagnitude = 0.0
+
+# The maximum FoV to smooth at
+MaximumSmoothingMagnitude = 0.8
+
+# The speed at MaximumSmoothingMagnitude
+# This should be in (0, 1], where 1 is no smoothing
+InitialSmoothingFactor = 0.000001
+
+# 0 is no smoothing, 1 is smoothing with linear acceleration, 2 is with quadratic acceleration, etc.
+SmoothingExponent = 0
+
+# Head shot height (in meters) from the top of the bounding box
+HeadShotHeight = -0.5
+
+# Chest shot height (in meters) from the top of the bounding box
+ChestShotHeight = -0.7
+
+# Randomness to add to the chest height
+ChestHeightRandomness = 0
+
+# The radius of the head (in meters)
+HeadRadius = 0.2
+
+# The radius of the chest (in meters)
+ChestRadius = 0.3
+
+# The number of milliseconds to automatically shoot after when using flick shot, if not able to line up a shot
+# inf to disable
+AutoShootMilliseconds = 200
+
+# Whether auto-melee is enabled
+AutoMelee = false
+
+# The in-game melee key
+MeleeKey = 0x58
+
+# The time to burst for while locked on to a target before reclicking the mouse button
+BurstResetSeconds = 0
+
+# The burst aim tolerance (multiplied with the head or chest radius to determine whether aimed at the target)
+BurstToleranceFactor = 1
+
+# The projectile speed in meters per second (inf for hitscan)
+# Speeds: https://us.battle.net/forums/en/overwatch/topic/20752695189
+ProjectileSpeed = inf
+
+# Whether the projectile has gravity
+ProjectileHasGravity = false
+
+# The height adjustment from which the projectile is fired
+ProjectileHeight = 0
+
+# The amount to lead by in seconds.
+# For example, 1 will aim for where the target is expected to be in 1 second.
+# This can affect accuracy significantly.
+LeadSeconds = 0.0
+
+# This is used in target selection factoring in world distance as well as screen distance.
+# The lower it is, the more important screen distance is.
+# Higher means world distance is more important.
+# 0 to ignore world distance.
+PositionScoreFactor = 0.005
+
+# Whether to not move on the Y axis (vertically)
+# Only used with aim lock.
+FreeYAxis = false
+
+# Whether to not move on the Y axis (vertically) if already aimed in the target's bounding box
+# Only used with aim lock.
+FreeYAxisWithinBoundingBox = false
+
+# Multiplied with the bounding box size when determining whether aimed within the target's bounding box on the Y axis.
+# Does nothing if FreeYAxisWithinBoundingBox is false.
+FreeYAxisWithinBoundingBoxFactor = 1.0
+
+# Whether to not move on the X axis (horizontally) if already aimed in the target's bounding box
+# Only used with aim lock.
+FreeXAxisWithinBoundingBox = false
+
+# Multiplied with the bounding box size when determining whether aimed within the target's bounding box on the X axis.
+# Does nothing if FreeXAxisWithinBoundingBox is false.
+FreeXAxisWithinBoundingBoxFactor = 1.0
+
+# Flick reset time in milliseconds
+FlickResetMilliseconds = inf
+
+# Whether to use the old mouse method. Enabling this will cause screen-lock/black-screen.
+UseOldMouseMethod = false
+
+# Whether to attempt to automatically find the target's head height.
+UseAutoHeadHeight = true
+
+# Whether to show the player heads on the overlay.
+OverlayShowHeads = true
+
+# Whether to show teammates on the ESP
+OverlayShowTeammates = false
+
+# The reaction time in milliseconds
+ReactionMilliseconds = 0
+
+# Profiles
+
+[McCree]
+	FieldOfView = 0.3
+	SmoothingExponent = 0
+	HeadShotHeight = -0.43
+	FlickShotEnemyHeadHitScanKey = 0x31
+	FlickShotEnemyChestHitScanKey = 0x32
+	FlickResetMilliseconds = 500
+
+[Soldier]
+	FieldOfView = 0.5
+	SmoothingExponent = 0
+	AimLockEnemyHeadHitScanKey = 0xA4
+	AimLockEnemyChestHitScanKey = 0x43
+	AimLockEnemyChestProjectileKey = 0x32
+	UseMaximumTrackingSpeed = false
+	BurstKey = 0x31
+	BurstResetSeconds = 0.34
+	BurstToleranceFactor = 1.0
+	ProjectileSpeed = 40
+	FreeXAxisWithinBoundingBox = true
+	FreeYAxisWithinBoundingBox = true
+
+[Tracer]
+	FieldOfView = 0.5
+	SmoothingExponent = 0
+	AimLockEnemyHeadHitScanKey = 0xA4
+	AimLockEnemyChestHitScanKey = 0x43
+	UseMaximumTrackingSpeed = false
+	AutoMelee = true
+	PositionScoreFactor = 0.01
+
+[Widowmaker]
+	FieldOfView = 0.5
+	SmoothingExponent = 0
+	HeadShotHeight = -0.43
+	FlickShotEnemyHeadHitScanKey = 0x31
+	FlickShotEnemyChestHitScanKey = 0x32
+	PositionScoreFactor = 0
+	FlickResetMilliseconds = 1250
+
+[Hanzo]
+	FieldOfView = 0.5
+	AimLockEnemyHeadProjectileKey = 0xA4
+	AimLockEnemyChestProjectileKey = 0x43
+	FlickShotEnemyHeadProjectileKey = 0x31
+	FlickShotEnemyChestProjectileKey = 0x32
+	ProjectileSpeed = 88.66
+	ProjectileDropRate = 0.01
+
+[Ana]
+	FieldOfView = 0.5
+	FlickShotEnemyChestProjectileKey = 0x31
+	FlickShotFriendProjectileKey = 0x32
+	ProjectileSpeed = 85.5
+
+[Zenyatta]
+	FieldOfView = 0.5
+	AimLockEnemyHeadProjectileKey = 0xA4
+	AimLockEnemyChestProjectileKey = 0x43
+	ProjectileSpeed = 80
+
+[Junkrat]
+	FieldOfView = 0.5
+	AimLockEnemyChestProjectileKey = 0xA4
+	ProjectileSpeed = 17.5
+	ProjectileDropRate = 0.1
+
+[Genji]
+	FieldOfView = 0.5
+	FlickShotEnemyHeadProjectileKey = 0x31
+	AimLockEnemyChestProjectileKey = 0xA4
+	ProjectileSpeed = 47
+	AutoMelee = true
+
+[Pharah]
+	FieldOfView = 0.5
+	FlickShotEnemyChestProjectileKey = 0x31
+	AimLockEnemyChestProjectileKey = 0xA4
+	ProjectileSpeed = 28.5
+
+[Orisa]
+	FieldOfView = 0.5
+	AimLockEnemyHeadProjectileKey = 0xA4
+	AimLockEnemyChestProjectileKey = 0x43
+	FlickShotEnemyHeadProjectileKey = 0x31
+	FlickShotEnemyChestProjectileKey = 0x32
+	ProjectileSpeed = 60
+
+["D.Va"]
+	FieldOfView = 0.5
+	AimLockEnemyHeadHitScanKey = 0xA4
+	AimLockEnemyChestHitScanKey = 0x43
+	AimLockEnemyChestProjectileKey = 0x31
+	ProjectileSpeed = 40
+
+[Roadhog]
+	FieldOfView = 0.5
+	AimLockEnemyHeadProjectileKey = 0xA4
+	AimLockEnemyChestProjectileKey = 0x43
+	ProjectileSpeed = 50 # Gun is 60 and hook is 40 but they're all close range so 50 should work well
+
+[Torbjorn]
+	FieldOfView = 0.5
+	AimLockEnemyHeadProjectileKey = 0xA4
+	AimLockEnemyChestProjectileKey = 0x43
+	ProjectileSpeed = 57
+	ProjectileDropRate = 0.03
+
+[Zarya]
+	FieldOfView = 0.5
+	AimLockEnemyChestHitScanKey = 0xA4
+	AimLockEnemyChestProjectileKey = 0x31
+	ProjectileSpeed = 27
+	ProjectileDropRate = 0.06
